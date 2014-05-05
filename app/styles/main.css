@@ -1,0 +1,29 @@
+.navbar{ 
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.breadcrumb {
+border-radius: 0px;
+border-bottom: 1px solid #DBDEE0;
+}
+
+.breadcrumb, #sidebar-left {
+	
+}
+
+#top-bar, .bar-left,.breadcrumb, #sidebar-left, #content {
+
+	padding: 0px;
+	margin: 0px;
+}
+
+#content {
+	margin-top: 1em;
+	margin-bottom: 3em;
+		
+}
+
+body	{
+	background-color: #F5F5F5;
+}

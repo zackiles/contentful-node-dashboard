@@ -1,0 +1,57 @@
+<form ng-controller="EntryCreateCtrl">
+	
+	<!-- Category selector -->
+	<br>
+	<div class="btn-group" dropdown is-open="status.isopen">
+		<button type="button" class="btn btn-default dropdown-toggle" ng-disabled="disabled">
+			Select a Project Category <span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li ng-repeat="category in categories"><a href ng-click="setCategory(category)">{{category}}</a></li>
+		</ul>
+	</div>
+	<br><br>
+
+	<div class="form-group">
+		<label for="projectName">Project Name</label>
+		<input type="text" class="form-control" id="projectName" ng-model="projectName"
+	</div>
+	<div class="form-group">
+		<label for="projectShortDescription">Project Short Description</label>
+		<textarea class="form-control" rows="3" id="projectShortDescription" ng-model="projectShortDescription"></textarea>
+	</div>
+	<div class="form-group">
+		<label for="projectLongDescription">Project Long Description</label>
+		<textarea class="form-control" rows="3" id="projectLongDescription" ng-model="projectLongDescription"></textarea>
+	</div>
+	
+	<div class="well well-sm" ng-controller="UploadCtrl">
+		<div class="row">
+			<div class="col-md-5">
+				<label for="mediaFile">Main image or Video </label>
+				<input type="file" ng-file-select="onFileSelect($files)" >
+			</div>
+			<div class="col-md-7">
+				<b>Preview:</b><br />
+				<i ng-hide="imageSrc">No image chosen</i>
+				<img ng-src="{{imageSrc}}" /><br/>
+			</div>
+		</div>
+	</div>
+	
+	<div class="well well-sm" ng-controller="UploadCtrl">
+		<div class="row">
+			<div class="col-md-5">
+				<label for="mediaFileImage">Logo </label>
+				<input type="file"  ng-file-select="onFileSelect($files)" >
+			</div>
+			<div class="col-md-7">
+				<b>Preview:</b><br />
+				<i ng-hide="imageSrc">No image chosen</i>
+				<img ng-src="{{imageSrc}}" /><br/>
+			</div>
+		</div>
+	</div>
+	
+  <button class="btn btn-lg btn-danger" ng-click="publishEntry()">Submit</button>
+</form>

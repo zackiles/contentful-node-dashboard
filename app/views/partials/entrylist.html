@@ -1,0 +1,19 @@
+<div ng-controller="EntryListCtrl">
+	<div class="row" ng-repeat="entries in entries.data" >
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h4>{{ entries.fields.projectName["en-US"] }}</h4>
+			</div>
+			<div class="panel-body">
+				<small><span class="glyphicon glyphicon-dashboard"></span> {{ dateFromUTCString(entries.sys.createdAt) }}</small>
+				<br><br>
+				<dl>
+					<dt>Project short description</dt>
+					<dd>{{ entries.fields.projectShortDescription["en-US"] }}</dd>
+					<dt>Project long description</dt>
+					<dd>{{ entries.fields.projectLongDescription["en-US"] }}</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+</div>

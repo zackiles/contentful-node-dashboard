@@ -1,0 +1,32 @@
+<div ng-include="'partials/navbar'"></div>
+
+<main class="container-fluid">
+	<div class="row" id="top-bar">
+		<div class="col-sm-3 col-md-2 bar-top bar-left">
+		</div>
+		<div class="col-sm-9 col-sm-10" >
+			<ol class="breadcrumb">
+				<li>
+					<a href="/">
+						Home
+					</a>
+				</li>
+				<li>{{panelCurrent}}</li>
+				</ol>
+		</div>
+	</div>
+	<div class="row bar-left">
+		<div class="col-sm-3 col-md-2">
+			<ul class="nav nav-tabs nav-stacked">
+				<li><a href ng-click="openPanel('entryList')"><span class="glyphicon glyphicon-chevron-right"></span> List Entries</a></li>
+				<li><a href ng-click="openPanel('entryCreate')"><span class="glyphicon glyphicon-chevron-right"></span> Create Entries</a></li>
+			</ul>
+		</div>
+		<div class="col-sm-9 col-sm-10" id="content">
+			<div class="container-fluid">
+			<div ng-include="'partials/entrylist'" ng-hide="panels.entryList.disabled"></div>
+			<div ng-include="'partials/entrycreate'" ng-hide="panels.entryCreate.disabled"></div>
+			</div>
+		</div>
+	</div>
+</main>
